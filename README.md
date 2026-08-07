@@ -1,4 +1,4 @@
-# Nano Customize
+# Nanorc Custom
 
 Customized nanorc files for **pretty nano syntax highlighting**.
 
