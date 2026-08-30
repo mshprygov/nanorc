@@ -7,8 +7,8 @@ on GitHub or in Linux distributions that I used,<br>
 and later modified to my own liking.
 <br>
 
-For **distribution.nanorc** files do:<br>
-`sudo cp distrobution.nanorc /etc/nanorc`<br>
+For **distribution.nanorc** files inside **distro** do:<br>
+`sudo cp distro/distrobution.nanorc /etc/nanorc`<br>
 <br>
 
 For **language.nanorc** files do:<br>
