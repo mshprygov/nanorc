@@ -12,7 +12,7 @@ color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 
 # Types and related keywords.
-color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|sizeof|static|struct|typedef|union|unsigned|void)\>"
+color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|static|unsigned|void)\>"
 color green "\<(int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t)\>"
 color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
 color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
@@ -31,11 +31,19 @@ color brightcyan "\<(try|throw|catch|operator|new|delete)\>"
 color magenta "\<(break|continue|goto|return|exit|abort)\>"
 
 # Formatted input/output
-color brightyellow "\<(sprintf|printf|scanf|sscanf|fprintf|fscanf)\>"
+color yellow "\<(sprintf|printf|scanf|sscanf|fprintf|fscanf)\>"
 # Unformatted input/output
-color brightyellow "\<(fgetc|getc|fgets|putc|fputc|fputs|getchar|gets|putchar|puts|ungetc)\>"
+color yellow "\<(fgetc|getc|fgets|putc|fputc|fputs|getchar|gets|putchar|puts|ungetc)\>"
 # File Handling
-color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename)\>"
+color pink "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename)\>"
+
+# More functions and types
+color cyan "\<(rand|srand|time|sizeof)\>"
+color brightgreen "\<(typedef)\>"
+color green "\<(union|struct)\>"
+
+# String handling
+color brightyellow "\<(strcpy|strcat|strcmp|strlen|strncat|strncmp|strchr|strrchr|strstr|strtok)\>"
 
 # Single-quoted stuff (characters, backslash escapes, hex and octal byte codes).
 color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
