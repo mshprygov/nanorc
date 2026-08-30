@@ -11,6 +11,9 @@ color brightred "\<[A-Z_][0-9A-Z_]*\>"
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 
+# Numbers
+color white "\<[0-9]*\>"
+
 # Types and related keywords.
 color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|static|unsigned|void)\>"
 color green "\<(int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t)\>"
@@ -31,7 +34,7 @@ color brightcyan "\<(try|throw|catch|operator|new|delete)\>"
 color magenta "\<(break|continue|goto|return|exit|abort)\>"
 
 # Formatted input/output
-color yellow "\<(sprintf|printf|scanf|sscanf|fprintf|fscanf)\>"
+color brown "\<(sprintf|printf|scanf|sscanf|fprintf|fscanf)\>"
 # Unformatted input/output
 color yellow "\<(fgetc|getc|fgets|putc|fputc|fputs|getchar|gets|putchar|puts|ungetc)\>"
 # File Handling
@@ -42,8 +45,11 @@ color cyan "\<(rand|srand|time|sizeof)\>"
 color brightgreen "\<(typedef)\>"
 color green "\<(union|struct)\>"
 
+# Memory management
+color brightyellow "\<(malloc|realloc|free|calloc)\>"
+
 # String handling
-color brightyellow "\<(strcpy|strcat|strcmp|strlen|strncat|strncmp|strchr|strrchr|strstr|strtok)\>"
+color brightyellow "\<(strcpy|strcat|strcmp|strlen|strncat|strncmp|strchr|strrchr|strstr|strtok|strspn|strcspn)\>"
 
 # Single-quoted stuff (characters, backslash escapes, hex and octal byte codes).
 color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
