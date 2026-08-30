@@ -1,15 +1,16 @@
-# Nanorc Custom
+# Nanorc
 
-Customized nanorc files for **pretty nano syntax highlighting**.
+### Custom nanorc files for pretty nano syntax highlighting
 
-> These files could be found anywhere on the Internet,
-GitHub or Linux distributions that I used,
-and modified to my own liking.
+> These files were found all around the Internet,<br>
+on GitHub or in Linux distributions that I used,<br>
+and later modified to my own liking.
+<br>
 
-For `distribution.nanorc` files use:<br>
+For **distribution.nanorc** files do:<br>
 `sudo cp distrobution.nanorc /etc/nanorc`<br>
-to substitute your standard nanorc (backup before you do!)<br>
+<br>
 
-For `language.nanorc` files use:<br>
+For **language.nanorc** files do:<br>
 `sudo cp language.nanorc /usr/share/nano`<br>
-to add the language syntax highlighting.<br>
+<br>
