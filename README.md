@@ -8,7 +8,7 @@ and later modified to my own liking.
 <br>
 
 For **distribution.nanorc** files inside **distro** do:<br>
-`sudo cp distro/distrobution.nanorc /etc/nanorc`<br>
+`sudo cp distro/distribution.nanorc /etc/nanorc`<br>
 <br>
 
 For **language.nanorc** files do:<br>
