@@ -20,5 +20,7 @@ For **language.nanorc** files do:<br>
 <br>
 
 If **nano-syntax-highlighting** package is installed (Arch and derivatives),<br>
-make sure **extra** is included *after* it in **etc/nanorc** to overwrite it,<br>
-otherwise comment out the corresponding line in **etc/nanorc**
+make sure **extra** is included *after* it in **etc/nanorc** to overwrite it:<br>
+`include "/usr/share/nano-syntax-highlighting/*.nanorc"`<br>
+`include "/usr/share/nano/extra/*.nanorc"`<br>
+Otherwise comment out the corresponding line.
