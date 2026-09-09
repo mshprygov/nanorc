@@ -20,7 +20,7 @@ color brightred "\<[A-Z_][0-9A-Z_]*\>"
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
-color brightmagenta "\<(true|false|stdin|stdout|stderr)\>"
+color yellow "\<(true|false|stdin|stdout|stderr)\>"
 # Numbers
 color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
 
@@ -101,8 +101,8 @@ color ,green "[[:space:]]+$"
 # Format specifiers
 #color yellow "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
 color green "\\"
-# fix line terminator after line break
-color brightmagenta "(\\0)"
+# fix \0 and \n inside single quotes
+color brightmagenta "'(\\0|\\n)'"
 
 # Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
