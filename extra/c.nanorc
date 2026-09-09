@@ -9,10 +9,10 @@ comment "//"
 color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
 # Bitwise
 color brightgreen "[&|^~><]"
-# Curlies
-color cyan "[}{]"
 # Brackets
-color brightgreen "[)(]"
+color magenta "[)(]"
+# Curlies
+color magenta "[}{]"
 
 # Constants
 color brightred "\<[A-Z_][0-9A-Z_]*\>"
@@ -20,7 +20,7 @@ color brightred "\<[A-Z_][0-9A-Z_]*\>"
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
-color cyan "\<(true|false|stdin|stdout|stderr)\>"
+color brightmagenta "\<(true|false|stdin|stdout|stderr)\>"
 # Numbers
 color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
 
@@ -30,43 +30,44 @@ color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 # Special types
 color green "\<(FILE|DIR)\>"
-color cyan "\<(typedef)\>"
+color brightgreen "\<(typedef)\>"
 
 # [--- math.h ---]
 color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
 color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 # Math functions
-color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
-color yellow "\<(ceil|floor|round|trunc|f?(max|min|abs|dim))\>"
+color cyan "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+color cyan "\<(pow|sqrt|cbrt|exp|log)\>"
+color cyan "\<(ceil|floor|round|trunc)\>"
+#color cyan "\<(f?(max|min|abs|dim))\>"
 
 # [--- stdio.h ---]
 # Formatted input/output
-color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+color cyan "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
 # Unformatted input/output
-color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+color cyan "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
 # Deprecated
-color yellow,white "\<(gets)\>"
+color cyan,red "\<(gets)\>"
 # File Handling
-color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+color cyan "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 # Error and Buffering Control
-color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
+color cyan "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
 
 # [--- stdlib.h ---]
 # Memory management
-color yellow "\<(malloc|realloc|free|calloc)\>"
+color cyan "\<(malloc|realloc|free|calloc)\>"
 
 # [--- ctype.h ---]
 # Classification
 color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
 # Transformation
-color yellow "\<(tolower|toupper)\>"
+color cyan "\<(tolower|toupper)\>"
 
 # [--- string.h ---]
 # String handling
-color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+color cyan "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
 # Memory operations
-color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+color cyan "\<(memcpy|memmove|memset|memcmp|memchr)\>"
 
 # [--- time.h ---]
 color cyan "\<(s?rand|time|clock|timespec_get|difftime)\>"
@@ -98,9 +99,10 @@ color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
 color ,green "[[:space:]]+$"
 
 # Format specifiers
-color white "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
-color brightblue "\\n"
-
+#color yellow "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+color green "\\"
+# fix line terminator after line break
+color brightmagenta "(\\0)"
 
 # Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
