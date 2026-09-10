@@ -96,9 +96,6 @@ color cyan ""([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
 
-# Reminders.
-color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
-
 # Trailing whitespace.
 color ,green "[[:space:]]+$"
 
@@ -111,3 +108,6 @@ color brightmagenta "'(\\0|\\n)'"
 # Comments.
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
 color brightblue start="/\*" end="\*/"
+
+# Reminders.
+color brightwhite,blue "\<(FIXME|TODO|XXX)\>"

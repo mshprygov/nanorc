@@ -1,6 +1,9 @@
 #syntax "pascal" "\.pas$" "\.pp$"
-syntax "pascal" "\.pas$"
+syntax "pascal" "\.(pas|pp|lpr)$"
 comment "//"
+
+# Numbers.
+color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # Reserved Keywords Turbo Pascal
 icolor brightblue "\<(\band\b|\barray\b|\basm\b|\bbegin\b|\bbreak\b|\bcase\b|\bconst\b|\bconstructor\b|\bcontinue\b|\bdestructor\b|\bdiv\b|\bdo\b|\bdownto\b|\belse\b|\bend\b|\bfalse\b|\bfile\b|\bfor\b|\bfunction\b|\bgoto\b|\bif\b|\bimplementation\b|\bin\b|\binline\b|\binterface\b|\blabel\b|\bmod\b|\bnil\b|\bnot\b|\bobject\b|\bof\b|\bon\b|\boperator\b|\bor\b|\bpacked\b|\bprocedure\b|\bprogram\b|\brecord\b|\brepeat\b|\bset\b|\bshl\b|\bshr\b|\bthen\b|\bto\b|\btrue\b|\btype\b|\bunit\b|\buntil\b|\buses\b|\bvar\b|\bwhile\b|\bwith\b|\bxor\b)\>"
@@ -9,21 +12,46 @@ icolor brightblue "\<(\band\b|\barray\b|\basm\b|\bbegin\b|\bbreak\b|\bcase\b|\bc
 icolor brightblue "\<(\bas\b|\bclass\b|\bconstref\b|\bdispose\b|\bexcept\b|\bexit\b|\bexports\b|\bfinalization\b|\bfinally\b|\binherited\b|\binitialization\b|\bis\b|\blibrary\b|\bnew\b|\bon\b|\bout\b|\bproperty\b|\braise\b|\bself\b|\bthreadvar\b|\btry\b)\>"
 
 # Modifiers
-icolor brightyellow "\<(\babsolute\b|\babstract\b|\balias\b|\bassembler\b|\bcdecl\b|\bcppdecl\b|\bdefault\b|\bexport\b|\bexternal\b|\bforward\b|\bgeneric\b|\bindex\b|\blocal\b|\bname\b|\bnostackframe\b|\boldfpccall\b|\boverride\b|\bpascal\b|\bprivate\b|\bprotected\b|\bpublic\b|\bpublished\b|\bregister\b|\breintroduce\b|\bsafecall\b|\bsoftfloat\b|\bspecialize\b|\bstdcall\b|\bvirtual\b|\bfar\b|\bnear\b)\>"
+icolor brightyellow "\<(\babsolute\b|\babstract\b|\balias\b|\bassembler\b|\bcdecl\b|\bcppdecl\b|\bdefault\b|\bexport\b|\bexternal\b|\bforward\b|\bgeneric\b|\bindex\b|\blocal\b|\bnostackframe\b|\boldfpccall\b|\boverride\b|\bpascal\b|\bprivate\b|\bprotected\b|\bpublic\b|\bpublished\b|\bregister\b|\breintroduce\b|\bsafecall\b|\bsoftfloat\b|\bspecialize\b|\bstdcall\b|\bvirtual\b|\bfar\b|\bnear\b)\>"
 
 # DataTypes
 icolor brightgreen "\<(\bstring\b|\binteger\b|\buint64\b|\bint64\b|\breal\b|\bchar\b|\bboolean\b|\bword\b|\blongint\b|\btextfile\b|\bfile\b|\btext\b)\>"
+# More String DataTypes
+icolor brightgreen "\<p?(ansi|short|unicode|wide)?(string|char)\>"
 
 # Other
 icolor yellow "\<(\blowercase\b|\bassignfile\b|\bClose\b|\bParamStr\b|\bParamCount\b|\bLength\b|\bSetLength\b|\bInc\b|\bDec\b|\bGetUserDir\b|\bAssign\b|\bRewrite\b|\bCompareStr\b|\bDelete\b|\bCompareText\b|\bPos\b|\bLeftStr\b|\bRightStr\b|\bCopy\b|\bFileExists\b|\bReset\b|\bReadLn\b|\bRead\b|\bWriteLn\b|\bWrite\b|\bEof\b|\bEol\b|\bNil\b|\bClrScr\b|\bTextColor\b|\bTextBackground\b)\>"
 
+# File Handling
+icolor yellow "\<(eol|eoln|eof|seekeoln|seekeof|assign|append|close|closefile|reset|rewrite|seek)\>"
+
+# Special Constants
+icolor cyan "\<(true|false)\>"
+icolor brightred "\<(nil|nan)\>"
+
+# Flow control
+icolor magenta "\<(break|continue|exit|label|goto)\>"
+
 # Operators
-color brightyellow "[\)\(,;]+|[][]+|(:|=|\+|\-)+"
+color brightyellow "[][}{)(,.;:/=+*!?`^@&~><-]+"
+# Escape, Pointers and Character Expression
+color cyan "[&@#$^]"
+# Brackets
+color brightyellow "[)(]"
+# Squares
+#color yellow "[][]"
 
 # Text Strings
 color brightmagenta "'[^']*'"
+
+# TODO
+# Compiler directives
+#color red,white "{$*}"
 
 # Comments
 color green "//.*$"
 color green start="\{" end="\}"
 color green start="\(\*" end="\*\)"
+
+# Reminders
+color black,green "\<(fixme|todo|xxx)\>"
