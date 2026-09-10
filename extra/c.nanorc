@@ -10,7 +10,9 @@ color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
 # Bitwise
 color brightgreen "[&|^~><]"
 # Brackets
-color magenta "[)(]"
+color brightyellow "[)(]"
+# Squares
+#color yellow "[][]"
 # Curlies
 color magenta "[}{]"
 
@@ -20,9 +22,10 @@ color brightred "\<[A-Z_][0-9A-Z_]*\>"
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
-color yellow "\<(true|false|stdin|stdout|stderr)\>"
+color brightred "\<(stdin|stdout|stderr)\>"
+color brightblue "\<(true|false)\>"
 # Numbers
-color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
+color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # Types and related keywords
 color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|sizeof|static|struct|typedef|union|unsigned|void|size_t)\>"
@@ -30,47 +33,48 @@ color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 # Special types
 color green "\<(FILE|DIR)\>"
-color brightgreen "\<(typedef)\>"
+color cyan "\<(typedef)\>"
 
 # [--- math.h ---]
+# More Types
 color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
 color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 # Math functions
-color cyan "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-color cyan "\<(pow|sqrt|cbrt|exp|log)\>"
-color cyan "\<(ceil|floor|round|trunc)\>"
-#color cyan "\<(f?(max|min|abs|dim))\>"
+#color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+#color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
+#color yellow "\<(ceil|floor|round|trunc)\>"
+#color yellow "\<(f?(max|min|abs|dim))\>"
 
 # [--- stdio.h ---]
 # Formatted input/output
-color cyan "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+#color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
 # Unformatted input/output
-color cyan "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+#color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
 # Deprecated
-color cyan,red "\<(gets)\>"
+#color yellow,red "\<(gets)\>"
 # File Handling
-color cyan "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 # Error and Buffering Control
-color cyan "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
+#color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
 
 # [--- stdlib.h ---]
 # Memory management
-color cyan "\<(malloc|realloc|free|calloc)\>"
+#color yellow "\<(malloc|realloc|free|calloc)\>"
 
 # [--- ctype.h ---]
 # Classification
 color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
 # Transformation
-color cyan "\<(tolower|toupper)\>"
+#color yellow "\<(tolower|toupper)\>"
 
 # [--- string.h ---]
 # String handling
-color cyan "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+#color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
 # Memory operations
-color cyan "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+#color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
 
 # [--- time.h ---]
-color cyan "\<(s?rand|time|clock|timespec_get|difftime)\>"
+color brightblue "\<(s?rand|time|clock|timespec_get|difftime)\>"
 # Time types
 color green "\<(time_t|clock_t|timespec|timeval)\>"
 
@@ -83,14 +87,14 @@ color magenta "\<(break|continue|goto|return|exit|abort)\>"
 color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 
 # GCC builtins
-color cyan "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+color brightmagenta "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
 # Strings and names of included files
-color brightyellow ""([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color cyan ""([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 
 # Preprocessor directives
-color brightcyan start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
-color brightcyan "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
+color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
+color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
 
 # Reminders
 color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
@@ -99,9 +103,9 @@ color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
 color ,green "[[:space:]]+$"
 
 # Format specifiers
-#color yellow "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+color green "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
 color green "\\"
-# fix \0 and \n inside single quotes
+# Fix \0 and \n inside single quotes
 color brightmagenta "'(\\0|\\n)'"
 
 # Comments
