@@ -33,7 +33,7 @@ color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 # Special types.
 color green "\<(FILE|DIR)\>"
-color cyan "\<(typedef)\>"
+color lightgreen "\<(typedef)\>"
 
 # [--- math.h ---]
 # Math Types.
