@@ -14,7 +14,7 @@ color brightyellow "[)(]"
 # Squares.
 #color yellow "[][]"
 # Curlies.
-color magenta "[}{]"
+color yellow "[}{]"
 
 # Constants.
 color brightred "\<[A-Z_][0-9A-Z_]*\>"
