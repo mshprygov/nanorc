@@ -19,7 +19,7 @@ icolor brightblue "\<(and|array|asm|begin|break|case|const|constructor|continue|
 icolor brightblue "\<(as|class|constref|dispose|except|exit|exports|finalization|finally|inherited|initialization|is|library|new|on|out|property|raise|self|threadvar|try)\>"
 
 # Modifiers
-icolor cyan "\<(absolute|abstract|alias|assembler|cdecl|cppdecl|default|export|external|forward|generic|index|local|nostackframe|oldfpccall|override|pascal|private|protected|public|published|register|reintroduce|safecall|softfloat|specialize|stdcall|virtual|far|near)\>"
+icolor magenta "\<(absolute|abstract|alias|assembler|cdecl|cppdecl|default|export|external|forward|generic|index|local|nostackframe|oldfpccall|override|pascal|private|protected|public|published|register|reintroduce|safecall|softfloat|specialize|stdcall|virtual|far|near)\>"
 
 # DataTypes
 icolor green "\<(string|integer|(u|p)?int(8|16|32|64)|real|currency|extended|single|double|char|byte|cardinal|boolean|(long|d|q)?word|longint|textfile|file|text|pointer)\>"
@@ -43,31 +43,32 @@ icolor yellow "\<(eol|eoln|eof|seekeoln|seekeof|assign|append|close|closefile|re
 
 # Memory Operations
 icolor yellow "\<(addr|assigned|dispose|fillchar|freemem|getmem|move|new|reallocmem)\>"
-icolor cyan "\<(sizeof)\>"
+icolor brightgreen "\<(sizeof)\>"
 
 # Casting and Parsing routines
 icolor yellow "\<(ord|chr|str|strtoint(def)?|strtofloat|val|(int|float)+tostr)\>"
 
 # Special Constants
-icolor cyan "\<(true|false)\>"
+icolor brightred "\<(true|false)\>"
 icolor brightred "\<(nil|nan|pi|infinity)\>"
 
 # Special reserved words
-icolor cyan "\<(Result|self)\>"
+icolor magenta "\<(Result|self)\>"
+icolor green "\<(self)\>"
 # Special reserved methods
 icolor yellow "\<(create|destroy|clear|free)\>"
 
 # Flow control
-icolor brightyellow "\<(break|continue|exit|label|goto|halt)\>"
+icolor magenta "\<(break|continue|exit|label|goto|halt)\>"
 
 # Operators
 color brightyellow "[][}{)(,.;:/=+*!?`^@&~><-]+"
 # Logic Operators
 icolor brightblue "\<(and|or|not|xor|in)\>"
 # Math and Bitwise
-icolor cyan "\<(mod|div|shl|shr)\>"
+icolor brightyellow "\<(mod|div|shl|shr)\>"
 # Escape, Pointers and Character Expression
-color cyan "[&@#$^]"
+color green "[&@#$^]"
 # For Loops
 icolor brightblue "\<(to|downto)\>"
 # Brackets
@@ -79,12 +80,12 @@ color brightgreen "[)(]"
 color brightmagenta "'([^']|'')*'"
 
 # Comments
-color magenta "//.*$"
-color magenta start="\{" end="\}"
-color magenta start="\(\*" end="\*\)"
+color cyan "//.*$"
+color cyan start="\{" end="\}"
+color cyan start="\(\*" end="\*\)"
 
 # Compiler directives
-color brightred start="\{\$" end="\}"
+color magenta start="\{\$" end="\}"
 
 # Reminders
-icolor brightwhite,magenta "\<(fixme|todo|xxx)\>"
+icolor black,cyan "\<(fixme|todo|xxx)\>"
