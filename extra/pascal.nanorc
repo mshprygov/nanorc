@@ -9,7 +9,7 @@
 syntax "pascal" "\.(pas|pp|lpr)$"
 comment "//"
 
-# Numbers.
+# Numbers
 color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # Reserved Keywords Turbo Pascal
@@ -19,50 +19,72 @@ icolor brightblue "\<(and|array|asm|begin|break|case|const|constructor|continue|
 icolor brightblue "\<(as|class|constref|dispose|except|exit|exports|finalization|finally|inherited|initialization|is|library|new|on|out|property|raise|self|threadvar|try)\>"
 
 # Modifiers
-icolor brightyellow "\<(absolute|abstract|alias|assembler|cdecl|cppdecl|default|export|external|forward|generic|index|local|nostackframe|oldfpccall|override|pascal|private|protected|public|published|register|reintroduce|safecall|softfloat|specialize|stdcall|virtual|far|near)\>"
+icolor cyan "\<(absolute|abstract|alias|assembler|cdecl|cppdecl|default|export|external|forward|generic|index|local|nostackframe|oldfpccall|override|pascal|private|protected|public|published|register|reintroduce|safecall|softfloat|specialize|stdcall|virtual|far|near)\>"
 
 # DataTypes
-icolor brightgreen "\<(string|integer|uint64|int64|real|char|boolean|word|longint|textfile|file|text)\>"
+icolor green "\<(string|integer|(u|p)?int(8|16|32|64)|real|currency|extended|single|double|char|byte|cardinal|boolean|(long|d|q)?word|longint|textfile|file|text|pointer)\>"
+# More Int DataTypes
+icolor green "\<((native|ptr|size)+u?int|(small|short|long)+int)\>"
 # More String DataTypes
-icolor brightgreen "\<p?(ansi|short|unicode|wide)?(string|char)\>"
+icolor green "\<p?(ansi|short|unicode|wide)+(string|char)\>"
+# Structured DataTypes
+icolor brightblue "\<(record|class|object|set|array|of|variant|interface|enum)\>"
+icolor brightblue "\<(set|array|of|variant|enum)\>"
 
 # Other
-icolor yellow "\<(lowercase|assignfile|Close|ParamStr|ParamCount|Length|SetLength|Inc|Dec|GetUserDir|Assign|Rewrite|CompareStr|Delete|CompareText|Pos|LeftStr|RightStr|Copy|FileExists|Reset|ReadLn|Read|WriteLn|Write|Eof|Eol|Nil|ClrScr|TextColor|TextBackground)\>"
+icolor yellow "\<(upcase|lowercase|assignfile|Close|ParamStr|ParamCount|Length|SetLength|Inc|Dec|GetUserDir|Assign|Rewrite|CompareStr|Delete|CompareText|Pos|LeftStr|RightStr|Copy|FileExists|Reset|ReadLn|Read|WriteLn|Write|Eof|Eol|Nil|ClrScr|TextColor|TextBackground)\>"
 
-# More builtins
-icolor cyan "\<(random(ize)?|randseed)\>"
-icolor cyan "\<(floor|ceil)\>"
+# Math functions
+icolor yellow "\<(floor|ceil|abs|arctan|sin|cos|sincos|dec|inc|exp|frac|hi|int|ln|lo|odd|pi|round|sqr|sqrt|swap|trunc|ord|succ|pred|low|high|chr)\>"
+icolor yellow "\<(random(ize)?|randseed)\>"
 
 # File Handling
-icolor yellow "\<(eol|eoln|eof|seekeoln|seekeof|assign|append|close|closefile|reset|rewrite|seek)\>"
+icolor yellow "\<(eol|eoln|eof|seekeoln|seekeof|assign|append|close|closefile|reset|rewrite|seek|blockread|blockwrite|chdir|concat|copy|seek|filepos|eof|rename|flush|erase)\>"
+
+# Memory Operations
+icolor yellow "\<(addr|assigned|dispose|fillchar|freemem|getmem|move|new|reallocmem)\>"
+icolor cyan "\<(sizeof)\>"
+
+# Casting and Parsing routines
+icolor yellow "\<(ord|chr|str|strtoint(def)?|strtofloat|val|(int|float)+tostr)\>"
 
 # Special Constants
 icolor cyan "\<(true|false)\>"
-icolor brightred "\<(nil|nan)\>"
+icolor brightred "\<(nil|nan|pi|infinity)\>"
+
+# Special reserved words
+icolor cyan "\<(Result|self)\>"
+# Special reserved methods
+icolor yellow "\<(create|destroy|clear|free)\>"
 
 # Flow control
-icolor magenta "\<(break|continue|exit|label|goto)\>"
+icolor brightyellow "\<(break|continue|exit|label|goto|halt)\>"
 
 # Operators
 color brightyellow "[][}{)(,.;:/=+*!?`^@&~><-]+"
+# Logic Operators
+icolor brightblue "\<(and|or|not|xor|in)\>"
+# Math and Bitwise
+icolor cyan "\<(mod|div|shl|shr)\>"
 # Escape, Pointers and Character Expression
 color cyan "[&@#$^]"
+# For Loops
+icolor brightblue "\<(to|downto)\>"
 # Brackets
-color brightyellow "[)(]"
+color brightgreen "[)(]"
 # Squares
 #color yellow "[][]"
 
 # Text Strings
-color brightmagenta "'[^']*'"
-
-# TODO
-# Compiler directives
-#color red,white "{$*}"
+color brightmagenta "'([^']|'')*'"
 
 # Comments
-color green "//.*$"
-color green start="\{" end="\}"
-color green start="\(\*" end="\*\)"
+color magenta "//.*$"
+color magenta start="\{" end="\}"
+color magenta start="\(\*" end="\*\)"
+
+# Compiler directives
+color brightred start="\{\$" end="\}"
 
 # Reminders
-color black,green "\<(fixme|todo|xxx)\>"
+icolor brightwhite,magenta "\<(fixme|todo|xxx)\>"
