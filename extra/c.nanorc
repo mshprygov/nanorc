@@ -1,7 +1,8 @@
 ## Syntax highlighting for C and C++ files.
 
-## This file was heavily modified by me, Mikhail Shprygov
-## Since I only write in C, I am not sure how it will behave with C++
+## This file was heavily modified by Mikhail Shprygov
+## Since I only write in C for GCC on Linux,
+## I am not sure how it will behave with C++ or other platform
 ## For any questions and suggestions find me on github.com/mshprygov
 
 syntax c "\.([ch](pp|xx)?|C|cc|c\+\+|cu|H|hh|ii?)$"

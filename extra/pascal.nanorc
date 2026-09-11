@@ -1,3 +1,8 @@
+## This file was heavily modified by Mikhail Shprygov
+## I write in Free Pascal for FPC on Linux only
+## and I have no idea how this may behave on other dialect/platform
+## For any questions and suggestions find me on github.com/mshprygov
+
 #syntax "pascal" "\.pas$" "\.pp$"
 syntax "pascal" "\.(pas|pp|lpr)$"
 comment "//"
@@ -21,6 +26,10 @@ icolor brightgreen "\<p?(ansi|short|unicode|wide)?(string|char)\>"
 
 # Other
 icolor yellow "\<(\blowercase\b|\bassignfile\b|\bClose\b|\bParamStr\b|\bParamCount\b|\bLength\b|\bSetLength\b|\bInc\b|\bDec\b|\bGetUserDir\b|\bAssign\b|\bRewrite\b|\bCompareStr\b|\bDelete\b|\bCompareText\b|\bPos\b|\bLeftStr\b|\bRightStr\b|\bCopy\b|\bFileExists\b|\bReset\b|\bReadLn\b|\bRead\b|\bWriteLn\b|\bWrite\b|\bEof\b|\bEol\b|\bNil\b|\bClrScr\b|\bTextColor\b|\bTextBackground\b)\>"
+
+# More builtins
+icolor cyan "\<(random(ize)?|randseed)\>"
+icolor cyan "\<(floor|ceil)\>"
 
 # File Handling
 icolor yellow "\<(eol|eoln|eof|seekeoln|seekeof|assign|append|close|closefile|reset|rewrite|seek)\>"
