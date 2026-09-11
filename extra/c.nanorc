@@ -1,113 +1,122 @@
 ## Syntax highlighting for C and C++ files.
 
+## This file was heavily modified by me, Mikhail Shprygov
+## Since I only write in C, I am not sure how it will behave with C++
+## For any questions and suggestions find me on github.com/mshprygov
+
 syntax c "\.([ch](pp|xx)?|C|cc|c\+\+|cu|H|hh|ii?)$"
 header "-\*-.*\<C(\+\+)?((;|[[:blank:]]).*)?-\*-"
 magic "^(C|C\+\+) (source|program)"
 comment "//"
 
-# Operators.
+# Operators
 color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
-# Bitwise.
+# Bitwise
 color brightgreen "[&|^~><]"
-# Brackets.
+# C++ extension
+color yellow "\<(and|or|xor|not)\>"
+# Brackets
 color brightyellow "[)(]"
-# Squares.
+# Squares
 #color yellow "[][]"
-# Curlies.
+# Curlies
 color yellow "[}{]"
 
-# Constants.
-color brightred "\<[A-Z_][0-9A-Z_]*\>"
-# Labels.
-color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
-color normal ":[[:blank:]]*$"
-# Special Constants.
-color brightred "\<(stdin|stdout|stderr)\>"
-color brightblue "\<(true|false)\>"
-# Numbers.
-color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
-
-# Types and related keywords.
+# Types and related keywords
 color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|sizeof|static|struct|typedef|union|unsigned|void|size_t)\>"
 color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
-# Special types.
+# C23 adds
+color green "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
+# Special types
 color green "\<(FILE|DIR)\>"
 color lightgreen "\<(typedef)\>"
+color yellow "\<(typeof|sizeof)\>"
+
+# Constants
+color brightred "\<[A-Z_][0-9A-Z_]*\>"
+# Labels
+color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
+color normal ":[[:blank:]]*$"
+# Special Constants
+color brightred "\<(stdin|stdout|stderr)\>"
+color brightmagenta "\<(true|false)\>"
+# Numbers
+color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # [--- math.h ---]
-# Math Types.
+# Math Types
 color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
 color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
-# Math functions.
+# Math functions
 #color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
 #color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
 #color yellow "\<(ceil|floor|round|trunc)\>"
 #color yellow "\<(f?(max|min|abs|dim))\>"
 
 # [--- stdio.h ---]
-# Formatted input/output.
+# Formatted input/output
 #color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
-# Unformatted input/output.
+# Unformatted input/output
 #color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
-# Deprecated.
+# Deprecated
 #color yellow,red "\<(gets)\>"
-# File Handling.
+# File Handling
 color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
-# Error and Buffering Control.
+# Error and Buffering Control
 #color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
 
 # [--- stdlib.h ---]
-# Memory management.
+# Memory management
 #color yellow "\<(malloc|realloc|free|calloc)\>"
 
 # [--- ctype.h ---]
-# Classification.
+# Classification
 color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
-# Transformation.
+# Transformation
 #color yellow "\<(tolower|toupper)\>"
 
 # [--- string.h ---]
-# String handling.
+# String handling
 #color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
-# Memory operations.
+# Memory operations
 #color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
 
 # [--- time.h ---]
 color cyan "\<(s?rand|time|clock|timespec_get|difftime)\>"
-# Time types.
+# Time types
 color green "\<(time_t|clock_t|timespec|timeval)\>"
 
-# Flow control.
+# Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
 color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
 color magenta "\<(break|continue|goto|return|exit|abort)\>"
 
-# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes).
+# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
 color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 
-# GCC builtins.
+# GCC builtins
 color brightmagenta "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
-# Strings and names of included files.
-color cyan ""([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+# Strings and names of included files
+color cyan "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 
-# Preprocessor directives.
+# Preprocessor directives
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
 
-# Trailing whitespace.
+# Trailing whitespace
 color ,green "[[:space:]]+$"
 
-# Format specifiers.
+# Format specifiers
 color green "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
 color green "\\"
-# Fix \0 and \n inside single quotes.
+# Fix \0 and \n inside single quotes
 color brightmagenta "'(\\0|\\n)'"
 
-# Comments.
+# Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
 color brightblue start="/\*" end="\*/"
 
-# Reminders.
+# Reminders
 color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
