@@ -13,21 +13,21 @@ comment "//"
 color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # Reserved Keywords Turbo Pascal
-icolor brightblue "\<(\band\b|\barray\b|\basm\b|\bbegin\b|\bbreak\b|\bcase\b|\bconst\b|\bconstructor\b|\bcontinue\b|\bdestructor\b|\bdiv\b|\bdo\b|\bdownto\b|\belse\b|\bend\b|\bfalse\b|\bfile\b|\bfor\b|\bfunction\b|\bgoto\b|\bif\b|\bimplementation\b|\bin\b|\binline\b|\binterface\b|\blabel\b|\bmod\b|\bnil\b|\bnot\b|\bobject\b|\bof\b|\bon\b|\boperator\b|\bor\b|\bpacked\b|\bprocedure\b|\bprogram\b|\brecord\b|\brepeat\b|\bset\b|\bshl\b|\bshr\b|\bthen\b|\bto\b|\btrue\b|\btype\b|\bunit\b|\buntil\b|\buses\b|\bvar\b|\bwhile\b|\bwith\b|\bxor\b)\>"
+icolor brightblue "\<(and|array|asm|begin|break|case|const|constructor|continue|destructor|div|do|downto|else|end|false|file|for|function|goto|if|implementation|in|inline|interface|label|mod|nil|not|object|of|on|operator|or|packed|procedure|program|record|repeat|set|shl|shr|then|to|true|type|unit|until|uses|var|while|with|xor)\>"
 
 # Reserved Keywords Object Pascal
-icolor brightblue "\<(\bas\b|\bclass\b|\bconstref\b|\bdispose\b|\bexcept\b|\bexit\b|\bexports\b|\bfinalization\b|\bfinally\b|\binherited\b|\binitialization\b|\bis\b|\blibrary\b|\bnew\b|\bon\b|\bout\b|\bproperty\b|\braise\b|\bself\b|\bthreadvar\b|\btry\b)\>"
+icolor brightblue "\<(as|class|constref|dispose|except|exit|exports|finalization|finally|inherited|initialization|is|library|new|on|out|property|raise|self|threadvar|try)\>"
 
 # Modifiers
-icolor brightyellow "\<(\babsolute\b|\babstract\b|\balias\b|\bassembler\b|\bcdecl\b|\bcppdecl\b|\bdefault\b|\bexport\b|\bexternal\b|\bforward\b|\bgeneric\b|\bindex\b|\blocal\b|\bnostackframe\b|\boldfpccall\b|\boverride\b|\bpascal\b|\bprivate\b|\bprotected\b|\bpublic\b|\bpublished\b|\bregister\b|\breintroduce\b|\bsafecall\b|\bsoftfloat\b|\bspecialize\b|\bstdcall\b|\bvirtual\b|\bfar\b|\bnear\b)\>"
+icolor brightyellow "\<(absolute|abstract|alias|assembler|cdecl|cppdecl|default|export|external|forward|generic|index|local|nostackframe|oldfpccall|override|pascal|private|protected|public|published|register|reintroduce|safecall|softfloat|specialize|stdcall|virtual|far|near)\>"
 
 # DataTypes
-icolor brightgreen "\<(\bstring\b|\binteger\b|\buint64\b|\bint64\b|\breal\b|\bchar\b|\bboolean\b|\bword\b|\blongint\b|\btextfile\b|\bfile\b|\btext\b)\>"
+icolor brightgreen "\<(string|integer|uint64|int64|real|char|boolean|word|longint|textfile|file|text)\>"
 # More String DataTypes
 icolor brightgreen "\<p?(ansi|short|unicode|wide)?(string|char)\>"
 
 # Other
-icolor yellow "\<(\blowercase\b|\bassignfile\b|\bClose\b|\bParamStr\b|\bParamCount\b|\bLength\b|\bSetLength\b|\bInc\b|\bDec\b|\bGetUserDir\b|\bAssign\b|\bRewrite\b|\bCompareStr\b|\bDelete\b|\bCompareText\b|\bPos\b|\bLeftStr\b|\bRightStr\b|\bCopy\b|\bFileExists\b|\bReset\b|\bReadLn\b|\bRead\b|\bWriteLn\b|\bWrite\b|\bEof\b|\bEol\b|\bNil\b|\bClrScr\b|\bTextColor\b|\bTextBackground\b)\>"
+icolor yellow "\<(lowercase|assignfile|Close|ParamStr|ParamCount|Length|SetLength|Inc|Dec|GetUserDir|Assign|Rewrite|CompareStr|Delete|CompareText|Pos|LeftStr|RightStr|Copy|FileExists|Reset|ReadLn|Read|WriteLn|Write|Eof|Eol|Nil|ClrScr|TextColor|TextBackground)\>"
 
 # More builtins
 icolor cyan "\<(random(ize)?|randseed)\>"
