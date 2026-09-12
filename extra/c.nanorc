@@ -15,11 +15,11 @@ color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
 # Bitwise
 color brightgreen "[&|^~><]"
 # C++ extension
-color yellow "\<(and|or|xor|not)\>"
+color brightgreen "\<(and|or|xor|not)\>"
 # Brackets
 color brightyellow "[)(]"
 # Squares
-#color yellow "[][]"
+color brightgreen "[][]"
 # Curlies
 color yellow "[}{]"
 
@@ -29,10 +29,6 @@ color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 # C23 adds
 color green "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
-# Special types
-color green "\<(FILE|DIR)\>"
-color lightgreen "\<(typedef)\>"
-color yellow "\<(typeof|sizeof)\>"
 
 # Constants
 color brightred "\<[A-Z_][0-9A-Z_]*\>"
@@ -41,9 +37,13 @@ color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
 color brightred "\<(stdin|stdout|stderr)\>"
-color brightmagenta "\<(true|false)\>"
+color cyan "\<(true|false)\>"
+# Special types
+color green "\<(FILE|DIR)\>"
+color lightgreen "\<(typedef)\>"
+#color yellow "\<(typeof|sizeof)\>"
 # Numbers
-color brightcyan "\<[0-9]+(\.[0-9]+)?\>"
+color cyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # [--- math.h ---]
 # Math Types
@@ -63,13 +63,13 @@ color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 # Deprecated
 #color yellow,red "\<(gets)\>"
 # File Handling
-color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+#color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 # Error and Buffering Control
 #color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
 
 # [--- stdlib.h ---]
 # Memory management
-#color yellow "\<(malloc|realloc|free|calloc)\>"
+color yellow "\<(malloc|realloc|free|calloc|new|delete)\>"
 
 # [--- ctype.h ---]
 # Classification
@@ -84,23 +84,23 @@ color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|u
 #color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
 
 # [--- time.h ---]
-color cyan "\<(s?rand|time|clock|timespec_get|difftime)\>"
+#color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
 # Time types
 color green "\<(time_t|clock_t|timespec|timeval)\>"
 
 # Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
-color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
+color yellow "\<(try|throw|catch|operator|new|delete)\>"
 color magenta "\<(break|continue|goto|return|exit|abort)\>"
 
 # Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color brightcyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 
 # GCC builtins
-color brightmagenta "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
 # Strings and names of included files
-color cyan "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 
 # Preprocessor directives
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
@@ -110,10 +110,10 @@ color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?
 color ,green "[[:space:]]+$"
 
 # Format specifiers
-color green "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
-color green "\\"
+#color magenta "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+color magenta "\\"
 # Fix \0 and \n inside single quotes
-color brightmagenta "'(\\0|\\n)'"
+color brightcyan "'(\\0|\\n)'"
 
 # Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
