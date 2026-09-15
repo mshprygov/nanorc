@@ -2,8 +2,8 @@
 
 Custom nanorc configuration files for that pretty syntax highlighting in nano.<br>
 
-These files were gathered from various sources across the Internet, GitHub repositories, and Linux distributions.<br>
-Some were later modified to my own liking, some were rewritten entirely from scratch.
+These files were gathered from various sources across the Internet.<br>
+Some were later modified to my own liking, some rewritten entirely from scratch.
 <br>
 
 ---
