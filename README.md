@@ -9,7 +9,7 @@ Some were later modified to my own liking, some rewritten entirely from scratch.
 ---
 ## Core Principles
 * **16 standard colors limit**: compatible with any terminal color scheme.
-* **Theme-agnostic**: works well on both dark and light backgrounds.
+* **Green theme focus**: works best with "Green on Black" theme that I mostly use.
 * **No "fruit salad" effect**: keep it lean and only highlight what is necessary.
 * **Easy to customize**: clearly structured, toggle features on/off via comments.
 
