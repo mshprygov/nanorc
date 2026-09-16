@@ -16,7 +16,8 @@ color brightgreen "[&|^~><]"
 color brightgreen "\<(and|or|xor|not)\>"
 color brightyellow "[)(]"
 color brightgreen "[][]"
-color normal "[}{]"
+color brightgreen "[}{]"
+color green "[;]"
 
 # Base types and keywords
 color green "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
@@ -37,30 +38,30 @@ color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
 color brightred "\<(stdin|stdout|stderr)\>"
-color brightmagenta "\<(true|false)\>"
+color brightmagenta "\<(true|false|this)\>"
 # Special types
 color green "\<(FILE|DIR)\>"
 color lightgreen "\<(typedef)\>"
-color yellow "\<(typeof|sizeof)\>"
+color lightgreen "\<(typeof|sizeof)\>"
 # Numbers
 color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
 
 # More keywords and builtin functions
-color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
-color yellow "\<(ceil|floor|round|trunc)\>"
-color yellow "\<(f?(max|min|abs|dim))\>"
-color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
-color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
-color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
-color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
-color yellow "\<(malloc|realloc|free|calloc|new|delete)\>"
-color yellow "\<(tolower|toupper)\>"
-color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
-color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
-color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
+color normal "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+color normal "\<(pow|sqrt|cbrt|exp|log)\>"
+color normal "\<(ceil|floor|round|trunc)\>"
+color normal "\<(f?(max|min|abs|dim))\>"
+color normal "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+color normal "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+color normal "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+color normal "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
+color normal "\<(malloc|realloc|free|calloc|new|delete)\>"
+color normal "\<(tolower|toupper)\>"
+color normal "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+color normal "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+color normal "\<(s?rand|time|clock|timespec_get|difftime)\>"
 # Deprecated
-color yellow,red "\<(gets)\>"
+color normal,white "\<(gets)\>"
 
 # Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
@@ -74,7 +75,7 @@ color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
 # Strings and names of included files
-color brightcyan "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color brightyellow "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 
 # Preprocessor directives
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
@@ -84,8 +85,8 @@ color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?
 color ,green "[[:space:]]+$"
 
 # Format specifiers
-color cyan "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
-color cyan "\\"
+#color cyan "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+#color cyan "\\"
 # Fix \0 and \n inside single quotes
 color brightmagenta "'(\\0|\\n)'"
 
