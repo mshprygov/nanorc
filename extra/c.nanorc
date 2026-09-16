@@ -12,23 +12,23 @@ comment "//"
 
 # Operators
 color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
-# Bitwise
 color brightgreen "[&|^~><]"
-# C++ extension
 color brightgreen "\<(and|or|xor|not)\>"
-# Brackets
 color brightyellow "[)(]"
-# Squares
 color brightgreen "[][]"
-# Curlies
-color yellow "[}{]"
+color normal "[}{]"
 
-# Types and related keywords
-color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|sizeof|static|struct|typedef|union|unsigned|void|size_t)\>"
+# Base types and keywords
+color green "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
+
+# More types
 color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
 color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
-# C23 adds
 color green "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
+color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
+color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
+color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
+color green "\<(time_t|clock_t|timespec|timeval)\>"
 
 # Constants
 color brightred "\<[A-Z_][0-9A-Z_]*\>"
@@ -37,56 +37,30 @@ color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
 color brightred "\<(stdin|stdout|stderr)\>"
-color cyan "\<(true|false)\>"
+color brightmagenta "\<(true|false)\>"
 # Special types
 color green "\<(FILE|DIR)\>"
 color lightgreen "\<(typedef)\>"
-#color yellow "\<(typeof|sizeof)\>"
+color yellow "\<(typeof|sizeof)\>"
 # Numbers
-color cyan "\<[0-9]+(\.[0-9]+)?\>"
+color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
 
-# [--- math.h ---]
-# Math Types
-color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
-color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
-# Math functions
-#color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-#color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
-#color yellow "\<(ceil|floor|round|trunc)\>"
-#color yellow "\<(f?(max|min|abs|dim))\>"
-
-# [--- stdio.h ---]
-# Formatted input/output
-#color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
-# Unformatted input/output
-#color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
-# Deprecated
-#color yellow,red "\<(gets)\>"
-# File Handling
-#color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
-# Error and Buffering Control
-#color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
-
-# [--- stdlib.h ---]
-# Memory management
+# More keywords and builtin functions
+color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
+color yellow "\<(ceil|floor|round|trunc)\>"
+color yellow "\<(f?(max|min|abs|dim))\>"
+color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
 color yellow "\<(malloc|realloc|free|calloc|new|delete)\>"
-
-# [--- ctype.h ---]
-# Classification
-color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
-# Transformation
-#color yellow "\<(tolower|toupper)\>"
-
-# [--- string.h ---]
-# String handling
-#color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
-# Memory operations
-#color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
-
-# [--- time.h ---]
-#color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
-# Time types
-color green "\<(time_t|clock_t|timespec|timeval)\>"
+color yellow "\<(tolower|toupper)\>"
+color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
+# Deprecated
+color yellow,red "\<(gets)\>"
 
 # Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
@@ -94,13 +68,13 @@ color yellow "\<(try|throw|catch|operator|new|delete)\>"
 color magenta "\<(break|continue|goto|return|exit|abort)\>"
 
 # Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightcyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 
 # GCC builtins
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
 # Strings and names of included files
-color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color brightcyan "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 
 # Preprocessor directives
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
@@ -110,10 +84,10 @@ color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?
 color ,green "[[:space:]]+$"
 
 # Format specifiers
-#color magenta "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
-color magenta "\\"
+color cyan "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+color cyan "\\"
 # Fix \0 and \n inside single quotes
-color brightcyan "'(\\0|\\n)'"
+color brightmagenta "'(\\0|\\n)'"
 
 # Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
