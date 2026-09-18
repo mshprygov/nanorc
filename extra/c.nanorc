@@ -31,22 +31,23 @@ color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
 color green "\<(time_t|clock_t|timespec|timeval)\>"
 
-# Constants
-color cyan "\<[A-Z_][0-9A-Z_]*\>"
+# Constants and Macros
+color normal "\<[A-Z_][0-9A-Z_]*\>"
 # Labels
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
-# Special Constants
+# Special Constants and System Tokens
+color normal "\<(typeof|sizeof)\>"
 color cyan "\<(stdin|stdout|stderr)\>"
 color brightcyan "\<(true|false)\>"
 color cyan "\<(this)\>"
-# Special types
 color green "\<(FILE|DIR)\>"
 color cyan "\<(NULL|EOF)\>"
 color cyan "\<(typedef)\>"
-#color cyan "\<(typeof|sizeof)\>"
 # Numbers
-color green "\<[0-9]+(\.[0-9]+)?\>"
+color cyan "\<[0-9]+\.?[0-9]*[eE][+-]?[0-9]+[fF]?\>"
+color cyan "\<0[xX][0-9a-fA-F]+[uUlL]*\>"
+color cyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # More keywords and builtin functions
 #color normal "\<(a?cosh?|a?sinh?|a?tanh?)\>"
