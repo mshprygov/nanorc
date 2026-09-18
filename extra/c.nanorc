@@ -12,12 +12,12 @@ comment "//"
 
 # Operators
 color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
-color brightgreen "[&|^~><]"
+#color brightgreen "[&|^~><]"
 color brightgreen "\<(and|or|xor|not)\>"
-color brightyellow "[)(]"
-color brightgreen "[][]"
-color brightgreen "[}{]"
-color green "[;]"
+#color brightgreen "[)(]"
+#color brightgreen "[][]"
+color normal "[}{]"
+color brightyellow "[;]"
 
 # Base types and keywords
 color green "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
@@ -32,63 +32,66 @@ color green "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|u
 color green "\<(time_t|clock_t|timespec|timeval)\>"
 
 # Constants
-color brightred "\<[A-Z_][0-9A-Z_]*\>"
+color cyan "\<[A-Z_][0-9A-Z_]*\>"
 # Labels
 color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color normal ":[[:blank:]]*$"
 # Special Constants
-color brightred "\<(stdin|stdout|stderr)\>"
-color brightmagenta "\<(true|false|this)\>"
+color cyan "\<(stdin|stdout|stderr)\>"
+color brightcyan "\<(true|false)\>"
+color cyan "\<(this)\>"
 # Special types
 color green "\<(FILE|DIR)\>"
-color lightgreen "\<(typedef)\>"
-color lightgreen "\<(typeof|sizeof)\>"
+color cyan "\<(NULL|EOF)\>"
+color cyan "\<(typedef)\>"
+#color cyan "\<(typeof|sizeof)\>"
 # Numbers
-color brightmagenta "\<[0-9]+(\.[0-9]+)?\>"
+color green "\<[0-9]+(\.[0-9]+)?\>"
 
 # More keywords and builtin functions
-color normal "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-color normal "\<(pow|sqrt|cbrt|exp|log)\>"
-color normal "\<(ceil|floor|round|trunc)\>"
-color normal "\<(f?(max|min|abs|dim))\>"
-color normal "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
-color normal "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
-color normal "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
-color normal "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
-color normal "\<(malloc|realloc|free|calloc|new|delete)\>"
-color normal "\<(tolower|toupper)\>"
-color normal "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
-color normal "\<(memcpy|memmove|memset|memcmp|memchr)\>"
-color normal "\<(s?rand|time|clock|timespec_get|difftime)\>"
+#color normal "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+#color normal "\<(pow|sqrt|cbrt|exp|log)\>"
+#color normal "\<(ceil|floor|round|trunc)\>"
+#color normal "\<(f?(max|min|abs|dim))\>"
+#color normal "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+#color normal "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+#color normal "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+#color normal "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
+#color normal "\<(malloc|realloc|free|calloc|new|delete)\>"
+#color normal "\<(tolower|toupper)\>"
+#color normal "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+#color normal "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+#color normal "\<(s?rand|time|clock|timespec_get|difftime)\>"
 # Deprecated
-color normal,white "\<(gets)\>"
+#color brightwhite,brightblack "\<(gets)\>"
 
 # Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
-color yellow "\<(try|throw|catch|operator|new|delete)\>"
-color magenta "\<(break|continue|goto|return|exit|abort)\>"
-
-# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
+color brightred "\<(break|continue|goto|return|exit|abort)\>"
 
 # GCC builtins
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
+# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
+color brightcyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+
 # Strings and names of included files
-color brightyellow "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+
+# Format specifiers
+color magenta "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+color magenta "\\"
+# Fix \0 and \n inside single quotes
+color brightcyan "'(\\0|\\n)'"
 
 # Preprocessor directives
 color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
+color green "^#"
 
 # Trailing whitespace
 color ,green "[[:space:]]+$"
-
-# Format specifiers
-#color cyan "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
-#color cyan "\\"
-# Fix \0 and \n inside single quotes
-color brightmagenta "'(\\0|\\n)'"
 
 # Comments
 color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
