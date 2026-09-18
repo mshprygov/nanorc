@@ -15,9 +15,9 @@ color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
 color brightgreen "[&|^~><]"
 color brightgreen "\<(and|or|xor|not)\>"
 #color brightyellow "[)(]"
-#color brightgreen "[][]"
+#color green "[][]"
 color green "[}{]"
-color green "[;]"
+#color green "[;]"
 
 # Base types and keywords
 color brightwhite "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
