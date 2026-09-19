@@ -11,39 +11,38 @@ magic "^(C|C\+\+) (source|program)"
 comment "//"
 
 # Operators
-color brightgreen "[][}{)(,.;:/=+*!?&|^~><-]+"
-color brightgreen "[&|^~><]"
-color brightgreen "\<(and|or|xor|not)\>"
-#color brightyellow "[)(]"
-#color green "[][]"
-color green "[}{]"
-#color green "[;]"
+color green "[][}{)(,.;:/=+*!?&|^~><-]+"
+color green "[&|^~><]"
+color green "\<(and|or|xor|not)\>"
+color brightgreen "[)(]"
+#color yellow "[][]"
+color normal "[}{]"
+color brightgreen "[;]"
 
 # Base types and keywords
-color brightwhite "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
-
+color brightblue "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
 # More types
-color brightwhite "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
-color brightwhite "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
-color brightwhite "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
-color brightwhite "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
-color brightwhite "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
-color brightwhite "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
-color brightwhite "\<(time_t|clock_t|timespec|timeval)\>"
+color brightblue "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
+color brightblue "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
+color brightblue "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
+color brightblue "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
+color brightblue "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
+color brightblue "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
+color brightblue "\<(time_t|clock_t|timespec|timeval)\>"
 
 # Constants and Macros
 color brightred "\<[A-Z_][0-9A-Z_]*\>"
 # Labels
-color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
+#color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 #color yellow ":[[:blank:]]*$"
 # Special Constants and System Tokens
-color brightwhite "\<(FILE|DIR)\>"
+color green "\<(FILE|DIR)\>"
 color cyan "\<(true|false)\>"
 color cyan "\<(this)\>"
-color cyan "\<(NULL|EOF)\>"
+color brightred "\<(NULL|EOF)\>"
 color green "\<(stdin|stdout|stderr)\>"
-color green "\<(typeof|sizeof)\>"
-color green "\<(typedef)\>"
+color brightblue "\<(typeof|sizeof)\>"
+color brightgreen "\<(typedef)\>"
 # Numbers
 color cyan "\<[0-9]+\.?[0-9]*[eE][+-]?[0-9]+[fF]?\>"
 color cyan "\<0[xX][0-9a-fA-F]+[uUlL]*\>"
@@ -75,28 +74,26 @@ color magenta "\<(break|continue|goto|return|exit|abort)\>"
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 
 # Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightcyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
-
+color brightyellow "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 # Strings and names of included files
 color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
-
 # Format specifiers
 #color brightred "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
 color magenta "\\"
 # Fix \0 and \n inside single quotes
-color brightcyan "'(\\0|\\n)'"
+color brightyellow "'(\\0|\\n)'"
 
 # Preprocessor directives
-color brightgreen start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
-color brightgreen "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
-color green "^#"
+color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
+color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
+color normal "^#"
 
 # Trailing whitespace
 color ,green "[[:space:]]+$"
 
 # Comments
-color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
-color brightblue start="/\*" end="\*/"
+color blue "//[^"]*$|(^|[[:blank:]])//.*"
+color blue start="/\*" end="\*/"
 
 # Reminders
 color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
