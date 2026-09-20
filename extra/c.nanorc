@@ -62,34 +62,34 @@ color cyan "\<[0-9]+(\.[0-9]+)?\>"
 #  Built-in Functions, Flow Control
 # =======================================
 ## Math.h functions
-#color red "\<(a?cosh?|a?sinh?|a?tanh?)\>"
-#color red "\<(pow|sqrt|cbrt|exp|log)\>"
-#color red "\<(ceil|floor|round|trunc)\>"
-#color red "\<(f?(max|min|abs|dim))\>"
+#color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
+#color yellow "\<(pow|sqrt|cbrt|exp|log)\>"
+#color yellow "\<(ceil|floor|round|trunc)\>"
+#color yellow "\<(f?(max|min|abs|dim))\>"
 ## Stdio.h functions
-#color red "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
-#color red "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
+#color yellow "\<((f|s)?printf|(f|s)?scanf|snprintf)\>"
+#color yellow "\<(f?getc|f?gets|f?putc|f?puts|getchar|putchar|ungetc)\>"
 ## Stdlib.h functions
-#color red "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
-#color red "\<(malloc|realloc|free|calloc|new|delete)\>"
+#color yellow "\<(feof|ferror|clearerr|perror|setbuf|setvbuf)\>"
+#color yellow "\<(malloc|realloc|free|calloc|new|delete)\>"
 ## String.h functions
-#color red "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
-#color red "\<(memcpy|memmove|memset|memcmp|memchr)\>"
+#color yellow "\<(strn?cpy|strn?cat|strn?cmp|strn?dup|strlen|strr?chr|strstr|strtok|strc?spn|pbrk|strcoll|strxfrm)\>"
+#color yellow "\<(memcpy|memmove|memset|memcmp|memchr)\>"
 ## Ctype.h functions
-#color red "\<(tolower|toupper)\>"
-#color red "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
+#color yellow "\<(tolower|toupper)\>"
+#color yellow "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
 ## Time.h functions
-#color red "\<(s?rand|time|clock|timespec_get|difftime)\>"
+#color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
 ## Files handling
-#color red "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
+#color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 ## GCC builtins
-color red "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
 ## Flow control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
 color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
-color yellow "\<(break|continue|goto|return|exit|abort)\>"
+color magenta "\<(break|continue|goto|return|exit|abort)\>"
 ## Deprecated
-#color red,white "\<(gets)\>"
+#color yellow,white "\<(gets)\>"
 
 # =======================================
 #  Strings and Literals
