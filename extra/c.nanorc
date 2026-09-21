@@ -18,8 +18,8 @@ color green "[&|^~><]"
 color green "\<(and|or|xor|not)\>"
 color brightgreen "[)(]"
 color brightgreen "[;,]"
+color brightgreen "[}{]"
 color normal "[][]"
-color normal "[}{]"
 
 # =======================================
 #  Base Keywords and Types
@@ -31,11 +31,20 @@ color brightblue "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Nor
 color brightblue "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 ## C23 adds
 color brightblue "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
-## Math.h types
+## Stdint.h
 color brightblue "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
+## Math.h types
 color brightblue "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 ## Time.h types
 color brightblue "\<(time_t|clock_t|timespec|timeval)\>"
+## User defined types
+color brightblue "\<(struct|union|enum|typedef)\>"
+## Storage types
+color brightblue "\<(auto|extern|static|register)\>"
+## Conditionals and Flow Control
+color brightblue "\<(if|else|for|while|do|switch|case|default)\>"
+color brightblue "\<(try|throw|catch|operator|new|delete)\>"
+color brightblue "\<(break|continue|goto|return|exit|abort)\>"
 
 # =======================================
 #  Macros, Constants and Numbers
@@ -51,15 +60,13 @@ color cyan "\<(true|false)\>"
 color cyan "\<(this)\>"
 #color cyan "\<(NULL|EOF)\>"
 color green "\<(stdin|stdout|stderr)\>"
-color brightblue "\<(typeof|sizeof)\>"
-color green "\<(typedef)\>"
 ## Numbers
 color cyan "\<[0-9]+\.?[0-9]*[eE][+-]?[0-9]+[fF]?\>"
 color cyan "\<0[xX][0-9a-fA-F]+[uUlL]*\>"
 color cyan "\<[0-9]+(\.[0-9]+)?\>"
 
 # =======================================
-#  Built-in Functions, Flow Control
+#  Built-in Functions
 # =======================================
 ## Math.h functions
 #color yellow "\<(a?cosh?|a?sinh?|a?tanh?)\>"
@@ -84,10 +91,6 @@ color cyan "\<[0-9]+(\.[0-9]+)?\>"
 #color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 ## GCC builtins
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
-## Flow control
-color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
-color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
-color magenta "\<(break|continue|goto|return|exit|abort)\>"
 ## Deprecated
 #color yellow,white "\<(gets)\>"
 
