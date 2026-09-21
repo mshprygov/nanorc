@@ -19,7 +19,7 @@ color green "\<(and|or|xor|not)\>"
 color brightgreen "[)(]"
 color normal "[][]"
 color normal "[}{]"
-color brightgreen "[;]"
+color brightgreen "[;,]"
 
 # =======================================
 #  Base Keywords and Types
