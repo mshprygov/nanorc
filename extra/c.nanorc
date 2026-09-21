@@ -13,13 +13,13 @@ comment "//"
 # =======================================
 #  Operators, Punctuation, Brackets
 # =======================================
-color green "[][}{)(,.;:/=+*!?%&|^~><-]+"
+color green "[-+,.;:/=*!?%&|^~><]+"
 color green "[&|^~><]"
 color green "\<(and|or|xor|not)\>"
 color brightgreen "[)(]"
+color brightgreen "[;,]"
 color normal "[][]"
 color normal "[}{]"
-color brightgreen "[;,]"
 
 # =======================================
 #  Base Keywords and Types
