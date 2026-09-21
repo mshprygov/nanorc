@@ -13,38 +13,38 @@ comment "//"
 # =======================================
 #  Operators, Punctuation, Brackets
 # =======================================
-color green "[-+,.;:/=*!?%&|^~><]+"
-color green "[&|^~><]"
-color green "\<(and|or|xor|not)\>"
+color brightgreen "[-+,.;:/=*!?%&|^~><]+"
+color brightgreen "[&|^~><]"
+color brightgreen "\<(and|or|xor|not)\>"
 color brightgreen "[)(]"
 color brightgreen "[;,]"
-color brightgreen "[}{]"
+color normal "[}{]"
 color normal "[][]"
 
 # =======================================
 #  Base Keywords and Types
 # =======================================
 ## Base C keywords
-color brightblue "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
+color green "\<(auto|break|case|bool|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|restrict|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|size_t)\>"
 ## More types
-color brightblue "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
-color brightblue "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
+color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
+color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
 ## C23 adds
-color brightblue "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
+color green "\<(bool|alignas|alignof|constexpr|false|nullptr|static_assert|thread_local|true|typeof|typeof_unqual|_BitInt|_Decimal(32|64|128))\>"
 ## Stdint.h
-color brightblue "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
+color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
 ## Math.h types
-color brightblue "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
+color green "\<(float_t|double_t|u?intptr_t|u?intmax_t)\>"
 ## Time.h types
-color brightblue "\<(time_t|clock_t|timespec|timeval)\>"
+color green "\<(time_t|clock_t|timespec|timeval)\>"
 ## User defined types
-color brightblue "\<(struct|union|enum|typedef)\>"
+color green "\<(struct|union|enum|typedef)\>"
 ## Storage types
-color brightblue "\<(auto|extern|static|register)\>"
+color green "\<(auto|extern|static|register)\>"
 ## Conditionals and Flow Control
-color brightblue "\<(if|else|for|while|do|switch|case|default)\>"
-color brightblue "\<(try|throw|catch|operator|new|delete)\>"
-color brightblue "\<(break|continue|goto|return|exit|abort)\>"
+color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
+color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
+color brightred "\<(break|continue|goto|return|exit|abort)\>"
 
 # =======================================
 #  Macros, Constants and Numbers
@@ -55,11 +55,11 @@ color brightred "\<[A-Z_][0-9A-Z_]*\>"
 color green "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color green ":[[:blank:]]*$"
 ## Special constants and system tokens
-color brightblue "\<(FILE|DIR)\>"
+color green "\<(FILE|DIR)\>"
 color cyan "\<(true|false)\>"
 color cyan "\<(this)\>"
-#color cyan "\<(NULL|EOF)\>"
-color green "\<(stdin|stdout|stderr)\>"
+color brightred "\<(NULL|EOF)\>"
+color cyan "\<(stdin|stdout|stderr)\>"
 ## Numbers
 color cyan "\<[0-9]+\.?[0-9]*[eE][+-]?[0-9]+[fF]?\>"
 color cyan "\<0[xX][0-9a-fA-F]+[uUlL]*\>"
@@ -111,7 +111,7 @@ color brightyellow "'(\\0|\\n)'"
 color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
 ## Fix hash on preprocessor lines
-color normal "^[[:blank:]]*#"
+color brightgreen "^[[:blank:]]*#"
 
 # =======================================
 #  Comments, Notes, Reminders
@@ -119,7 +119,7 @@ color normal "^[[:blank:]]*#"
 ## Trailing whitespace
 color ,green "[[:space:]]+$"
 ## Comments
-color blue "//[^"]*$|(^|[[:blank:]])//.*"
-color blue start="/\*" end="\*/"
+color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
+color brightblue start="/\*" end="\*/"
 ## Reminders
 color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
