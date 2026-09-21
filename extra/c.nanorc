@@ -111,7 +111,7 @@ color brightyellow "'(\\0|\\n)'"
 color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
 ## Fix hash on preprocessor lines
-color brightgreen "^[[:blank:]]*#"
+color normal "^[[:blank:]]*#"
 
 # =======================================
 #  Comments, Notes, Reminders
