@@ -103,7 +103,7 @@ color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidd
 #  Strings and Literals
 # =======================================
 ## Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color cyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color brightgreen "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 ## Strings and names of included files
 color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 ## Format specifiers
@@ -111,7 +111,7 @@ color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 ## Highlight escape inside strings
 color magenta "\\"
 ## Fix \0 and \n inside single quotes
-color cyan "'(\\0|\\n)'"
+color brightgreen "'(\\0|\\n)'"
 ## Preprocessor directives
 color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
