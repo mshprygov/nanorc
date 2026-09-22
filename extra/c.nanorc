@@ -37,7 +37,7 @@ color green "\<(auto|extern|static|register)\>"
 ## Conditionals and loop control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
 color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
-color brightred "\<(break|continue|goto|return|exit|abort)\>"
+color magenta "\<(break|continue|goto|return|exit|abort)\>"
 ## Labels
 color brightyellow "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color brightyellow ":[[:blank:]]*$"
@@ -103,15 +103,15 @@ color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidd
 #  Strings and Literals
 # =======================================
 ## Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightgreen "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 ## Strings and names of included files
-color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
+color brightred "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 ## Format specifiers
-#color magenta "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
+#color brightred "%-?[0-9]*(\.[0-9]+)?(z|ll|l|h)?(d|i|u|o|x|X|f|F|e|E|g|G|a|A|c|s|p|n)"
 ## Highlight escape inside strings
-color magenta "\\"
+color red "\\"
 ## Fix \0 and \n inside single quotes
-color brightgreen "'(\\0|\\n)'"
+color brightmagenta "'(\\0|\\n)'"
 ## Preprocessor directives
 color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
