@@ -62,8 +62,8 @@ color normal "\<[A-Z_][0-9A-Z_]*\>"
 color green "\<(FILE|DIR)\>"
 color cyan "\<(true|false)\>"
 color cyan "\<(this)\>"
-color cyan "\<(NULL|EOF)\>"
-color cyan "\<(stdin|stdout|stderr)\>"
+color magenta "\<(NULL|EOF)\>"
+color magenta "\<(stdin|stdout|stderr)\>"
 ## Numbers
 color cyan "\<[0-9]+\.?[0-9]*[eE][+-]?[0-9]+[fF]?\>"
 color cyan "\<0[xX][0-9a-fA-F]+[uUlL]*\>"
@@ -102,7 +102,7 @@ color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidd
 #  Strings and Literals
 # =======================================
 ## Single-quoted stuff (characters, backslash escapes, hex and octal byte codes)
-color brightyellow "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+color cyan "'([^'\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
 ## Strings and names of included files
 color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 ## Format specifiers
@@ -110,7 +110,7 @@ color brightmagenta "\"([^"]|\\")*"|#[[:blank:]]*include[[:blank:]]*<[^>]+>"
 ## Highlight escape inside strings
 color magenta "\\"
 ## Fix \0 and \n inside single quotes
-color brightyellow "'(\\0|\\n)'"
+color cyan "'(\\0|\\n)'"
 ## Preprocessor directives
 color green start="^[[:blank:]]*#[[:blank:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\])$"
 color green "^[[:blank:]]*#[[:blank:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
