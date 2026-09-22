@@ -18,7 +18,7 @@ color brightgreen "[&|^~><]"
 color brightgreen "\<(and|or|xor|not)\>"
 color brightgreen "[)(]"
 color brightgreen "[;,]"
-color normal "[}{]"
+color brightgreen "[}{]"
 color normal "[][]"
 
 # =======================================
@@ -41,19 +41,23 @@ color green "\<(time_t|clock_t|timespec|timeval)\>"
 color green "\<(struct|union|enum|typedef)\>"
 ## Storage types
 color green "\<(auto|extern|static|register)\>"
-## Conditionals and Flow Control
+
+# =======================================
+#  Flow Control
+# =======================================
+## Conditionals and loop control
 color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
 color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
 color brightred "\<(break|continue|goto|return|exit|abort)\>"
+## Labels
+color brightyellow "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
+color brightyellow ":[[:blank:]]*$"
 
 # =======================================
 #  Macros, Constants and Numbers
 # =======================================
 ## Constants and macros
-color brightred "\<[A-Z_][0-9A-Z_]*\>"
-## Labels
-color green "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
-color green ":[[:blank:]]*$"
+color normal "\<[A-Z_][0-9A-Z_]*\>"
 ## Special constants and system tokens
 color green "\<(FILE|DIR)\>"
 color cyan "\<(true|false)\>"
@@ -87,7 +91,7 @@ color cyan "\<[0-9]+(\.[0-9]+)?\>"
 #color yellow "\<(is(alnum|alpha|blank|cntrl|digit|graph|lower|print|punct|space|upper|xdigit))\>"
 ## Time.h functions
 #color yellow "\<(s?rand|time|clock|timespec_get|difftime)\>"
-## Files handling
+## File handling
 #color yellow "\<(fopen|fclose|freopen|fflush|setbuf|setvbuf|fread|fwrite|fgetpos|ftell|fseek|fsetpos|rewind|remove|rename|tmpfile|tmpnam)\>"
 ## GCC builtins
 color yellow "__attribute__[[:blank:]]*\(\([^)]*\)\)|__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
