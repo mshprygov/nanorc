@@ -11,17 +11,6 @@ magic "^(C|C\+\+) (source|program)"
 comment "//"
 
 # =======================================
-#  Operators, Punctuation, Brackets
-# =======================================
-color brightgreen "[-+,.;:/=*!?%&|^~><]+"
-color brightgreen "[&|^~><]"
-color brightgreen "\<(and|or|xor|not)\>"
-color brightgreen "[)(]"
-color brightgreen "[;,]"
-color brightgreen "[}{]"
-color normal "[][]"
-
-# =======================================
 #  Base Keywords and Types
 # =======================================
 ## Base C keywords
@@ -52,6 +41,17 @@ color brightred "\<(break|continue|goto|return|exit|abort)\>"
 ## Labels
 color brightyellow "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
 color brightyellow ":[[:blank:]]*$"
+
+# =======================================
+#  Operators, Punctuation, Brackets
+# =======================================
+color green "[-+,.;:/=*!?%&|^~><]+"
+color green "[&|^~><]"
+color green "\<(and|or|xor|not)\>"
+color brightgreen "[)(]"
+color brightgreen "[;,]"
+color normal "[}{]"
+color normal "[][]"
 
 # =======================================
 #  Macros, Constants and Numbers
