@@ -28,7 +28,7 @@
  set autoindent
 
 ## Back up files to the current filename plus a tilde.
-# set backup
+ set backup
 
 ## The directory to put unique backup files in.
  set backupdir "~/.local/share/nano"
@@ -288,7 +288,7 @@ extendsyntax javascript tabgives "  "		# 2 spaces
 ## keycode, which is hard-bound to the backspace function.  So, if you
 ## normally use <Backspace> for backspacing and not ^H, you can make
 ## <Ctrl+Backspace> delete the word to the left of the cursor with:
-# bind ^H chopwordleft main
+ bind ^H chopwordleft main
 
 ## For a more mnemonic Comment keystroke (overriding Cut-from-cursor):
 # bind M-K comment main
@@ -303,11 +303,11 @@ extendsyntax javascript tabgives "  "		# 2 spaces
 
 ## For quickly uppercasing or lowercasing the word that the cursor is on.
 ## (These effectively select a word and pipe it through a sed command.)
-# bind Sh-M-U "{nextword}{mark}{prevword}{execute}| sed 's/.*/\U&/' {enter}" main
-# bind Sh-M-L "{nextword}{mark}{prevword}{execute}| sed 's/.*/\L&/' {enter}" main
+ bind Sh-M-U "{nextword}{mark}{prevword}{execute}| sed 's/.*/\U&/' {enter}" main
+ bind Sh-M-L "{nextword}{mark}{prevword}{execute}| sed 's/.*/\L&/' {enter}" main
 
 ## For copying a marked region to the system clipboard:
-# bind Sh-M-C "{execute}| xsel -ib {enter}{undo}" main
+ bind Sh-M-C "{execute}| xsel -ib {enter}{undo}" main
 
 ## For normalizing Unicode to precomposed characters:
 # bind Sh-M-N "{execute}| uconv -x nfc {enter}" main
