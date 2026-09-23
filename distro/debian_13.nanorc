@@ -31,7 +31,7 @@
 # set backup
 
 ## The directory to put unique backup files in.
-# set backupdir "/home/mike/.backups"
+ set backupdir "~/.local/share/nano"
 
 ## Use bold text instead of reverse video text.
 # set boldtext
@@ -70,7 +70,7 @@
 
 ## Draw a vertical stripe at the given column, to help judge text width.
 ## (This option does not have a default value.)
-# set guidestripe 75
+# set guidestripe 80
 
 ## Remember the used search/replace strings for the next session.
 set historylog
@@ -225,7 +225,7 @@ set stateflags
  set errorcolor bold,white,red
  set spotlightcolor black,lightyellow
  set selectedcolor lightwhite,blue
- set stripecolor ,#444
+ set stripecolor ,#222
  set scrollercolor blue
  set numbercolor bold,black
  set keycolor cyan
@@ -273,7 +273,7 @@ extendsyntax css        tabgives "  "		# 2 spaces
 extendsyntax javascript tabgives "  "		# 2 spaces
 #extendsyntax php	tabgives "    "		# 4 spaces
 #extendsyntax html	tabgives "	"	# literal tab
-extendsyntax go         tabgives "	"	# literal tab
+#extendsyntax go         tabgives "	"	# literal tab
 
 ## === Key bindings ===
 ## For all details, see 'man nanorc', section REBINDING KEYS.
