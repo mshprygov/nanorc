@@ -181,7 +181,7 @@ set historylog
 set stateflags
 
 ## Use this tab size instead of the default; it must be greater than 0.
- set tabsize 4
+ set tabsize 8
 
 ## Convert each typed tab to the fitting number of spaces.
 # set tabstospaces
@@ -268,11 +268,12 @@ include "/usr/share/nano/debian/*.nanorc"
  extendsyntax python tabgives "    "
 
 ## More language specific tabsize overrides
-#extendsyntax html       tabgives "  "       # 2 spaces
-#extendsyntax css        tabgives "  "       # 2 spaces
-#extendsyntax javascript tabgives "  "       # 2 spaces
-extendsyntax html       tabgives "	"       # literal tab
-extendsyntax go         tabgives "	"       # literal tab
+extendsyntax html       tabgives "  "		# 2 spaces
+extendsyntax css        tabgives "  "		# 2 spaces
+extendsyntax javascript tabgives "  "		# 2 spaces
+#extendsyntax php	tabgives "    "		# 4 spaces
+#extendsyntax html	tabgives "	"	# literal tab
+extendsyntax go         tabgives "	"	# literal tab
 
 ## === Key bindings ===
 ## For all details, see 'man nanorc', section REBINDING KEYS.
