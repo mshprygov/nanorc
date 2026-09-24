@@ -268,14 +268,14 @@ set stateflags
  extendsyntax python tabgives "    "
 
 ## More language specific tabsize overrides
-extendsyntax html		tabgives "  "		# 2 spaces
-extendsyntax css		tabgives "  "		# 2 spaces
-extendsyntax javascript		tabgives "    "		# 4 spaces
-extendsyntax php		tabgives "    "		# 4 spaces
-extendsyntax ruby		tabgives "  "		# 2 spaces
-extendsyntax pascal		tabgives "    "		# 4 spaces
-#extendsyntax html		tabgives "	"	# literal tab
-#extendsyntax go		tabgives "	"	# literal tab
+# extendsyntax html		tabgives "  "		# 2 spaces
+# extendsyntax css		tabgives "  "		# 2 spaces
+# extendsyntax javascript	tabgives "    "		# 4 spaces
+# extendsyntax php		tabgives "    "		# 4 spaces
+# extendsyntax ruby		tabgives "  "		# 2 spaces
+# extendsyntax pascal		tabgives "    "		# 4 spaces
+# extendsyntax html		tabgives "	"	# literal tab
+# extendsyntax go		tabgives "	"	# literal tab
 
 ## === Key bindings ===
 ## For all details, see 'man nanorc', section REBINDING KEYS.
