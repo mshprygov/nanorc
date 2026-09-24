@@ -8,6 +8,24 @@
 ## Inside string parameters, quotes should not be escaped -- the last
 ## double quote on the line will be seen as the closing quote.
 
+## === Syntax coloring ===
+## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
+
+## To include most of the existing syntax definitions, you can do:
+include "/usr/share/nano/*.nanorc"
+#include "/usr/share/nano/nano-syntax-highlighting/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"
+include "/usr/share/nano/debian/*.nanorc"
+
+## Or you can select just the ones you need.  For example:
+# include "/usr/share/nano/html.nanorc"
+# include "/usr/share/nano/python.nanorc"
+# include "/usr/share/nano/sh.nanorc"
+
+## In /usr/share/nano/extra/ you can find some syntaxes that are
+## specific for certain distros or for some less common languages.
+
+
 ## If you want ^F, ^B, M-F and M-B to do what they did before version 8.0:
 # bind ^F forward main
 # bind ^B back main
@@ -245,35 +263,17 @@ set stateflags
 # set functioncolor magenta
 
 
-## === Syntax coloring ===
-## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
-
-## To include most of the existing syntax definitions, you can do:
-include "/usr/share/nano/*.nanorc"
-#include "/usr/share/nano/nano-syntax-highlighting/*.nanorc"
-include "/usr/share/nano/extra/*.nanorc"
-include "/usr/share/nano/debian/*.nanorc"
-
-## Or you can select just the ones you need.  For example:
-# include "/usr/share/nano/html.nanorc"
-# include "/usr/share/nano/python.nanorc"
-# include "/usr/share/nano/sh.nanorc"
-
-## In /usr/share/nano/extra/ you can find some syntaxes that are
-## specific for certain distros or for some less common languages.
-
-
 ## If <Tab> should always produce four spaces when editing a Python file,
 ## independent of the settings of 'tabsize' and 'tabstospaces':
  extendsyntax python tabgives "    "
 
 ## More language specific tabsize overrides
-extendsyntax html       tabgives "  "		# 2 spaces
-extendsyntax css        tabgives "  "		# 2 spaces
-extendsyntax javascript tabgives "  "		# 2 spaces
-#extendsyntax php	tabgives "    "		# 4 spaces
-#extendsyntax html	tabgives "	"	# literal tab
-#extendsyntax go         tabgives "	"	# literal tab
+#extendsyntax html		tabgives "  "		# 2 spaces
+#extendsyntax css		tabgives "  "		# 2 spaces
+#extendsyntax javascript	tabgives "  "		# 2 spaces
+#extendsyntax php		tabgives "    "		# 4 spaces
+#extendsyntax html		tabgives "	"	# literal tab
+#extendsyntax go		tabgives "	"	# literal tab
 
 ## === Key bindings ===
 ## For all details, see 'man nanorc', section REBINDING KEYS.
