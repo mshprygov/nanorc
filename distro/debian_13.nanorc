@@ -273,6 +273,7 @@ extendsyntax css		tabgives "  "		# 2 spaces
 extendsyntax javascript		tabgives "    "		# 4 spaces
 extendsyntax php		tabgives "    "		# 4 spaces
 extendsyntax ruby		tabgives "  "		# 2 spaces
+extendsyntax pascal		tabgives "    "		# 4 spaces
 #extendsyntax html		tabgives "	"	# literal tab
 #extendsyntax go		tabgives "	"	# literal tab
 
