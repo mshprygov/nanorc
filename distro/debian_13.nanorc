@@ -199,7 +199,7 @@ set historylog
 set stateflags
 
 ## Use this tab size instead of the default; it must be greater than 0.
- set tabsize 4
+ set tabsize 8
 
 ## Convert each typed tab to the fitting number of spaces.
 # set tabstospaces
@@ -268,10 +268,11 @@ set stateflags
  extendsyntax python tabgives "    "
 
 ## More language specific tabsize overrides
-#extendsyntax html		tabgives "  "		# 2 spaces
-#extendsyntax css		tabgives "  "		# 2 spaces
-#extendsyntax javascript	tabgives "  "		# 2 spaces
-#extendsyntax php		tabgives "    "		# 4 spaces
+extendsyntax html		tabgives "  "		# 2 spaces
+extendsyntax css		tabgives "  "		# 2 spaces
+extendsyntax javascript		tabgives "    "		# 4 spaces
+extendsyntax php		tabgives "    "		# 4 spaces
+extendsyntax ruby		tabgives "  "		# 2 spaces
 #extendsyntax html		tabgives "	"	# literal tab
 #extendsyntax go		tabgives "	"	# literal tab
 
