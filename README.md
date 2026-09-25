@@ -1,4 +1,4 @@
-# Nanorc
+# NANORC
 
 Custom nanorc configuration files for that pretty syntax highlighting in Nano.<br>
 
@@ -10,9 +10,17 @@ Some were later modified to my own liking, some rewritten entirely from scratch.
 ## Core Principles
 * **16 standard color names**: potentially compatible with any terminal color scheme.
 * **Green theme focus**: optimized for the "Green on Black" profile that I use most.
-* **No "fruit salad" effect**: kept minimal to only highlight what is necessary.
+* **Avoid "fruit salad" effect**: kept minimal to only highlight what is necessary.
 * **Easy to customize**: clearly structured to toggle features on/off via comments.
-
+## Additional Notes
+* **Tabs**: use hard tabs for indentation, not the spaces, the default 8 characters width.
+* **WebDev**: change tab width for webdev languages via Bash alias wrapper (not included here).
+* **Dark themes**: prioritize white-on-black profiles, may get incompatible for black-on-white.
+* **Updates**: update the languages I mostly use right now: C, Pascal, Bash, PHP, HTML, CSS.
+* **Future updates**: expect sometime later: Ruby, Perl, Python, Go, Crystal, JavaScript, Lua.
+* **Linux distro compatibility**: reflect my hopping between Debian, Arch, and derivatives.
+* **WiP**: this project is constantly work in progress and updates according to my workflow.
+---
 ## Installation
 * For **global Nano theme** run:<br>
 `sudo cp distro/distro.nanorc /etc/nanorc`<br>
